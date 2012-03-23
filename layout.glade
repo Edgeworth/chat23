@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<interface>
+  <requires lib="gtk+" version="2.16"/>
+  <!-- interface-naming-policy project-wide -->
+  <object class="GtkVBox" id="vboxLogin">
+    <property name="visible">True</property>
+    <property name="border_width">15</property>
+    <property name="orientation">vertical</property>
+    <property name="spacing">5</property>
+    <child>
+      <object class="GtkEntry" id="entryLoginEmail">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="invisible_char">&#x2022;</property>
+        <property name="width_chars">40</property>
+        <property name="primary_icon_stock">gtk-yes</property>
+        <property name="primary_icon_sensitive">True</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">False</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkEntry" id="entryLoginPassword">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="visibility">False</property>
+        <property name="invisible_char">&#x2022;</property>
+        <property name="primary_icon_stock">gtk-no</property>
+        <property name="primary_icon_sensitive">True</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">False</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkHSeparator" id="hseparatorLogin">
+        <property name="visible">True</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">False</property>
+        <property name="position">2</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="buttonLogin">
+        <property name="label">gtk-connect</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="use_stock">True</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">False</property>
+        <property name="position">3</property>
+      </packing>
+    </child>
+  </object>
+  <object class="GtkVBox" id="vboxConnecting">
+    <property name="visible">True</property>
+    <property name="orientation">vertical</property>
+    <property name="homogeneous">True</property>
+    <child>
+      <object class="GtkProgressBar" id="progressBarConnecting">
+        <property name="visible">True</property>
+        <property name="activity_mode">True</property>
+        <property name="show_text">True</property>
+        <property name="pulse_step">0.050000000000000003</property>
+        <property name="text" translatable="yes">Connecting...</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">False</property>
+        <property name="position">0</property>
+      </packing>
+    </child>
+  </object>
+  <object class="GtkMessageDialog" id="dialogError">
+    <property name="border_width">5</property>
+    <property name="title" translatable="yes">Error</property>
+    <property name="modal">True</property>
+    <property name="type_hint">dialog</property>
+    <property name="skip_taskbar_hint">True</property>
+    <property name="message_type">error</property>
+    <property name="text" translatable="yes">An error has occured:</property>
+    <child internal-child="vbox">
+      <object class="GtkVBox" id="vboxError">
+        <property name="visible">True</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">2</property>
+        <child internal-child="action_area">
+          <object class="GtkHButtonBox" id="boxError">
+            <property name="visible">True</property>
+            <property name="layout_style">end</property>
+            <child>
+              <object class="GtkButton" id="buttonError">
+                <property name="label" translatable="yes">Okay</property>
+                <property name="visible">True</property>
+                <property name="can_focus">True</property>
+                <property name="receives_default">True</property>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <action-widgets>
+      <action-widget response="-5">buttonError</action-widget>
+    </action-widgets>
+  </object>
+  <object class="GtkHBox" id="hboxTab">
+    <property name="visible">True</property>
+    <child>
+      <object class="GtkLabel" id="labelTab">
+        <property name="visible">True</property>
+        <property name="events">GDK_EXPOSURE_MASK | GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_MOTION_MASK | GDK_BUTTON1_MOTION_MASK | GDK_BUTTON2_MOTION_MASK | GDK_BUTTON3_MOTION_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK | GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_FOCUS_CHANGE_MASK | GDK_STRUCTURE_MASK | GDK_PROPERTY_CHANGE_MASK | GDK_VISIBILITY_NOTIFY_MASK | GDK_PROXIMITY_IN_MASK | GDK_PROXIMITY_OUT_MASK | GDK_SUBSTRUCTURE_MASK | GDK_SCROLL_MASK</property>
+        <property name="ellipsize">end</property>
+      </object>
+      <packing>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="buttonTab">
+        <property name="label" translatable="yes">X</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="events">GDK_EXPOSURE_MASK | GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_MOTION_MASK | GDK_BUTTON1_MOTION_MASK | GDK_BUTTON2_MOTION_MASK | GDK_BUTTON3_MOTION_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK | GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_FOCUS_CHANGE_MASK | GDK_STRUCTURE_MASK | GDK_PROPERTY_CHANGE_MASK | GDK_VISIBILITY_NOTIFY_MASK | GDK_PROXIMITY_IN_MASK | GDK_PROXIMITY_OUT_MASK | GDK_SUBSTRUCTURE_MASK | GDK_SCROLL_MASK</property>
+        <property name="relief">none</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">False</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+  </object>
+  <object class="GtkImage" id="imageTab">
+    <property name="visible">True</property>
+    <property name="stock">gtk-close</property>
+    <property name="icon-size">1</property>
+  </object>
+  <object class="GtkVPaned" id="vpaneChat">
+    <property name="visible">True</property>
+    <property name="can_focus">True</property>
+    <property name="orientation">vertical</property>
+    <property name="position">200</property>
+    <property name="position_set">True</property>
+    <child>
+      <object class="GtkScrolledWindow" id="scrolledChat">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="hscrollbar_policy">automatic</property>
+        <property name="vscrollbar_policy">automatic</property>
+        <property name="shadow_type">in</property>
+        <child>
+          <object class="GtkTextView" id="textChat">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="editable">False</property>
+            <property name="wrap_mode">word</property>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="resize">True</property>
+        <property name="shrink">True</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkScrolledWindow" id="scrolledChatEntry">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="hscrollbar_policy">automatic</property>
+        <property name="vscrollbar_policy">automatic</property>
+        <property name="shadow_type">in</property>
+        <child>
+          <object class="GtkTextView" id="textChatEntry">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="events">GDK_EXPOSURE_MASK | GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_MOTION_MASK | GDK_BUTTON1_MOTION_MASK | GDK_BUTTON2_MOTION_MASK | GDK_BUTTON3_MOTION_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_KEY_PRESS_MASK | GDK_KEY_RELEASE_MASK | GDK_ENTER_NOTIFY_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_FOCUS_CHANGE_MASK | GDK_STRUCTURE_MASK | GDK_PROPERTY_CHANGE_MASK | GDK_VISIBILITY_NOTIFY_MASK | GDK_PROXIMITY_IN_MASK | GDK_PROXIMITY_OUT_MASK | GDK_SUBSTRUCTURE_MASK | GDK_SCROLL_MASK</property>
+            <property name="wrap_mode">word</property>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="resize">False</property>
+        <property name="shrink">True</property>
+      </packing>
+    </child>
+  </object>
+  <object class="GtkWindow" id="chatWindow">
+    <property name="border_width">4</property>
+    <property name="default_width">500</property>
+    <property name="default_height">300</property>
+    <child>
+      <object class="GtkNotebook" id="noteMain">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="scrollable">True</property>
+        <property name="tab_border">0</property>
+        <property name="tab_hborder">0</property>
+        <property name="tab_vborder">0</property>
+        <property name="enable_popup">True</property>
+      </object>
+    </child>
+  </object>
+  <object class="GtkVBox" id="vboxContact">
+    <property name="visible">True</property>
+    <property name="orientation">vertical</property>
+    <child>
+      <object class="GtkScrolledWindow" id="scrolledContact">
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="hscrollbar_policy">never</property>
+        <property name="vscrollbar_policy">automatic</property>
+        <property name="shadow_type">in</property>
+        <child>
+          <object class="GtkTreeView" id="treeViewContact">
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="reorderable">True</property>
+            <property name="show_expanders">False</property>
+          </object>
+        </child>
+      </object>
+      <packing>
+        <property name="position">0</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="buttonContact">
+        <property name="label" translatable="yes">Chat</property>
+        <property name="visible">True</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="image">imageContact</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">False</property>
+        <property name="position">1</property>
+      </packing>
+    </child>
+  </object>
+  <object class="GtkImage" id="imageContact">
+    <property name="visible">True</property>
+    <property name="stock">gtk-yes</property>
+  </object>
+</interface>
