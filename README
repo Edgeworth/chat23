@@ -1,0 +1,13 @@
+This is an implementation of an msn client. It uses the msnp8 protocol.
+
+Required programs and libraries:
+cmake
+OpenSSL
+Boost
+GTKmm
+libpcrecpp (in pcre, I believe)
+
+run build.py
+
+Execution:
+./main
